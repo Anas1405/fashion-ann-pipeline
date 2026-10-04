@@ -16,4 +16,3 @@ __pycache__/
 client_secret*.json
 gdrive*.json
 credentials*.json
-/models
