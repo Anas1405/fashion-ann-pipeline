@@ -1,0 +1,18 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# DVC internals and local secrets
+.dvc/cache
+.dvc/tmp
+.dvc/config.local
+
+# Large model files (handled by DVC)
+*.h5
+
+# Google credentials - never commit
+client_secret*.json
+gdrive*.json
+credentials*.json
