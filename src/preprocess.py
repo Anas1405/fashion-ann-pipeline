@@ -27,3 +27,4 @@ np.savez_compressed(
     x_test=x_test, y_test=raw["y_test"],
 )
 print(f"Saved processed data: train={x_tr.shape}, val={x_val.shape}, test={x_test.shape}")
+print("Preprocessing finished successfully.")
