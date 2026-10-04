@@ -1,6 +1,7 @@
 preprocess:
   val_size: 0.1
   seed: 42
+  norm: standard
 
 train:
   dense_units: 256
