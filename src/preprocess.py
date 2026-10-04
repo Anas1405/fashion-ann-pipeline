@@ -8,9 +8,11 @@ from sklearn.model_selection import train_test_split
 params = yaml.safe_load(open("params.yaml"))["preprocess"]
 raw = np.load("data/raw/fashion_mnist.npz")
 
-# Normalize pixel values to [0, 1]
-x_train = raw["x_train"].astype("float32") / 255.0
-x_test = raw["x_test"].astype("float32") / 255.0
+# Teammate: standardize to zero mean / unit variance using training-set stats
+mean = raw["x_train"].mean()
+std = raw["x_train"].std()
+x_train = (raw["x_train"].astype("float32") - mean) / std
+x_test = (raw["x_test"].astype("float32") - mean) / std
 
 x_tr, x_val, y_tr, y_val = train_test_split(
     x_train, raw["y_train"],
